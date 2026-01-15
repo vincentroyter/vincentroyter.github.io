@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Audio-driven water simulation — Vincent Röyter</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Vincent Röyter</a>
+    <nav class="nav">
+      <a href="/projects/">Projects</a>
+      <a href="/music/">Music</a>
+      <a href="/demos/">Demos</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Audio-driven heightfield water simulation</h1>
+      <p class="lead">
+        An interactive real-time water surface simulation where wave energy
+        is injected using audio analysis and direct user interaction.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Overview</h2>
+      <p>
+        This project explores artistic and interactive water surface simulation
+        using a heightfield-based wave model. The focus is not strict physical
+        accuracy, but stability, responsiveness, and emergent patterns when
+        driven by audio signals.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Features</h2>
+      <ul>
+        <li>Real-time heightfield wave propagation</li>
+        <li>Audio-driven excitation using FFT analysis</li>
+        <li>Interactive mouse-based wave injection</li>
+        <li>Artist-friendly parameter controls</li>
+        <li>Multiple visualization modes</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Tech stack</h2>
+      <p>
+        C++17 · OpenGL · GLSL · ImGui · FFT-based audio analysis
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Media</h2>
+      <p class="muted">
+        Demo video and interactive web version coming soon.
+      </p>
+      <!-- later: <video>, <canvas>, or iframe -->
+    </section>
+
+    <section class="section">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://github.com/YOUR_REPO">Source code</a></li>
+        <li><a href="#">Download (desktop build)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="muted">© <span id="year"></span> Vincent Röyter</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" type="module"></script>
+</body>
+</html>
