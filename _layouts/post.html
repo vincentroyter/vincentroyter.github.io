@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<section class="hero">
+  <a class="muted-link" href="{{ '/blog/' | relative_url }}">← Back to blog</a>
+  <h1 style="margin-top:0.8rem;">{{ page.title }}</h1>
+  <p class="lead muted">
+    <time datetime="{{ page.date | date: '%Y-%m-%d' }}">
+      {{ page.date | date: "%B %-d, %Y" }}
+    </time>
+  </p>
+</section>
+
+<section class="section markdown">
+  {{ content }}
+</section>

@@ -1,0 +1,35 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="hero">
+  <h1>Blog</h1>
+  <p class="lead">Quick journal entries. Newest on top.</p>
+</section>
+
+<section class="section feed">
+  {% for post in paginator.posts %}
+    <article class="post">
+      <header class="post-head">
+        <h2 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </time>
+      </header>
+    </article>
+  {% endfor %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+  <nav class="pager" style="margin: 1.2rem 0 2rem;">
+    {% if paginator.previous_page %}
+      <a class="btn btn-ghost" href="{{ paginator.previous_page_path | relative_url }}">← Newer</a>
+    {% endif %}
+    {% if paginator.next_page %}
+      <a class="btn" href="{{ paginator.next_page_path | relative_url }}">Older →</a>
+    {% endif %}
+  </nav>
+{% endif %}

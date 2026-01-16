@@ -1,0 +1,14 @@
+title: Vincent Ossler Röyter
+description: Projects, blog, music
+url: ""
+baseurl: ""
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+
+# Optional: limits the number of posts shown on the blog landing page
+paginate: 12
+paginate_path: "/blog/page:num/"
+
+plugins:
+  - jekyll-paginate

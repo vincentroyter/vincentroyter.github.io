@@ -4,53 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects — Vincent Röyter</title>
+  <meta name="description" content="Projects by Vincent Röyter." />
   <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body class="layout">
   <header class="site-header">
     <a class="brand" href="/">Vincent Ossler Röyter</a>
     <nav class="nav">
-      <a href="/projects/">Projects</a>
+      <a class="active" href="/projects/">Projects</a>
+      <a href="/blog/">Blog</a>
       <a href="/music/">Music</a>
-      <a href="/#contact">Contact</a>
     </nav>
   </header>
 
   <main class="container">
     <section class="hero">
       <h1>Projects</h1>
-      <p class="lead">
-        Selected programming and graphics projects.
-      </p>
+      <p class="lead">Selected work — clean list now, details inside later.</p>
     </section>
 
     <section class="section">
-      <div class="cards">
-        <article class="card">
+      <div class="cards cards-2">
+        <a class="card card-link card-simple" href="/projects/water-sim.html" aria-label="Audio-driven heightfield water simulation">
+          <div class="thumb thumb-water" role="img" aria-label="Water simulation thumbnail"></div>
           <div class="card-body">
             <h3>Audio-driven heightfield water simulation</h3>
-            <p>
-              Real-time water surface simulation driven by audio analysis
-              and interactive forces.
-            </p>
-
-            <div class="meta">
-              <span>C++</span><span>OpenGL</span><span>Audio</span>
-            </div>
           </div>
+        </a>
 
-          <div class="card-actions">
-            <a href="/projects/water-sim.html">Read more →</a>
+        <a class="card card-link card-simple" href="#" aria-label="Coming soon">
+          <div class="thumb thumb-placeholder" aria-hidden="true"></div>
+          <div class="card-body">
+            <h3>Next project</h3>
           </div>
-        </article>
+        </a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p class="muted">© <span id="year"></span> Vincent Röyter</p>
+  <footer class="site-footer site-footer-min">
+    <div class="container footer-min">
+      <div class="footer-stamp">
+        <div class="stamp-dot" aria-hidden="true"></div>
+        <div class="muted">© <span id="year"></span> Vincent Röyter</div>
+      </div>
     </div>
   </footer>
 
