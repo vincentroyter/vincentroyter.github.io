@@ -168,35 +168,115 @@ a:hover{ text-decoration: underline; }
   margin-top: 2rem;
 }
 
-/* Blog feed: blended (no boxes) */
-.feed{ display: grid; gap: 0; margin-top: 1rem; }
+/* ---------------------------
+   Blog landing: elegant teasers
+   --------------------------- */
 
-.post{
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  overflow: visible;
-  padding: 1.2rem 0;
+.feed{
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.post + .post{ border-top: 1px solid var(--border); }
+/* A subtle panel (NOT a big box) */
+.post-teaser{
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.03);
+  padding: 1.05rem 1.1rem;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
 
-.post-head{
-  padding: 0;
+.post-teaser:hover{
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.14);
+  transform: translateY(-1px);
+}
+
+.post-teaser-titleline{
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 0.35rem;
 }
 
-.post-title{ font-size: 1.05rem; margin: 0; }
-.post-date{ color: var(--muted); font-size: 0.95rem; white-space: nowrap; }
+.post-title{
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.1px;
+}
 
+.post-title a{
+  color: var(--fg);
+  text-decoration: none;
+}
+.post-title a:hover{
+  color: var(--link);
+  text-decoration: none;
+}
+
+/* Excerpt: clamp + fade */
+.post-excerpt{
+  position: relative;
+  margin-top: 0.55rem;
+
+  /* clamp to ~3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  color: var(--muted);
+}
+
+/* gradient fade at bottom */
+.post-excerpt::after{
+  content:"";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2.1em;
+  background: linear-gradient(
+    to bottom,
+    rgba(11,12,16,0.0),
+    rgba(11,12,16,0.85)
+  );
+  pointer-events: none;
+}
+
+/* Make excerpt paragraphs behave nicely */
+.post-excerpt p{
+  margin: 0;
+}
+
+/* Read more button row */
+.post-teaser-actions{
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* A slightly more “elegant” button */
+.btn-read{
+  padding: 0.55rem 0.85rem;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.04);
+}
+
+.btn-read:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+/* Mobile: stack date under title */
 @media (max-width: 620px){
-  .post-head{ flex-direction: column; align-items: flex-start; }
+  .post-teaser-titleline{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .post-excerpt::after{
+    background: linear-gradient(to bottom, rgba(11,12,16,0.0), rgba(11,12,16,0.92));
+  }
 }
+
 
 .markdown p{ color: var(--muted); margin: 0 0 1rem; }
 .markdown a{ color: var(--link); }

@@ -9,6 +9,7 @@ markdown: kramdown
 # Optional: limits the number of posts shown on the blog landing page
 paginate: 12
 paginate_path: "/blog/page:num/"
+excerpt_separator: "<!--more-->"
 
 plugins:
   - jekyll-paginate

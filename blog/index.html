@@ -3,20 +3,36 @@ layout: default
 title: Blog
 ---
 
+<section class="hero">
+  <h1>Blog</h1>
+  <p class="lead">Quick journal entries.</p>
+</section>
+
 <section class="section feed">
   {% for post in paginator.posts %}
-    <article class="post">
-      <header class="post-head">
-        <h2 class="post-title">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-        <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
-          {{ post.date | date: "%B %-d, %Y" }}
-        </time>
+    <article class="post-teaser">
+      <header class="post-teaser-head">
+        <div class="post-teaser-titleline">
+          <h2 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+            {{ post.date | date: "%B %-d, %Y" }}
+          </time>
+        </div>
       </header>
+
+      <div class="post-excerpt">
+        {{ post.excerpt }}
+      </div>
+
+      <div class="post-teaser-actions">
+        <a class="btn btn-read" href="{{ post.url | relative_url }}">Read more →</a>
+      </div>
     </article>
   {% endfor %}
 </section>
+
 
 {% if paginator.total_pages > 1 %}
   <nav class="pager" style="margin: 1.2rem 0 2rem;">
