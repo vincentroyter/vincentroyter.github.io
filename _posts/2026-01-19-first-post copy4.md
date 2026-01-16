@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First post"
+title: "First psost"
 ---
 
 I’m keeping this site intentionally simple: projects, notes, and eventually music.
